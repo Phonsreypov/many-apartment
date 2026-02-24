@@ -1,6 +1,6 @@
 "use client";
 
-import { rooms } from "./configs/Data";
+import { rooms } from "../configs/Data";
 
 export default function HomeRoomSection() {
   return (
@@ -30,7 +30,7 @@ export default function HomeRoomSection() {
             <div
               key={index}
               className="relative rounded-3xl overflow-hidden group shadow-md hover:shadow-2xl transition duration-500"
-            >   
+            >
 
               {/* Image */}
               <div

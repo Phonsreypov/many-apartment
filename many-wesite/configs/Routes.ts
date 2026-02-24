@@ -1,3 +1,6 @@
+import { roomList } from "./roomList";
+
+
 export type Route = {
   label: string;
   url: string;
@@ -12,23 +15,17 @@ export const MenuTop: Route[] = [
   {
     label: "Rooms",
     url: "/rooms",
+    children: roomList.map((room) => ({
+      label: room.title,
+      url: `/rooms/${room.slug}`,
+    })),
   },
   {
     label: "About Us",
     url: "/about",
   },
   {
-    label: "Pages",
-    url: "#",
-    children: [
-      { label: "Room Details", url: "/room-details" },
-      { label: "Blog Details", url: "/blog-details" },
-      { label: "Family Room", url: "/family-room" },
-      { label: "Premium Room", url: "/premium-room" },
-    ],
-  },
-  {
-    label: "News",
+    label: "Blog",
     url: "/blog",
   },
   {

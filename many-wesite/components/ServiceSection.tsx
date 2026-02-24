@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { services } from "./configs/Services"; // adjust path if needed
+import { services } from "../configs/Services"; // adjust path if needed
 
 export default function ServiceSection() {
   return (

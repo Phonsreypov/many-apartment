@@ -62,3 +62,44 @@ export const blogs = [
     size: "small",
   },
 ];
+export const testimonials = [
+  {
+    name: "Alexander Vasquez",
+    text: "After a construction project took longer than expected, my husband, my daughter and I needed a place to stay for a few nights. We absolutely loved our vacation experience.",
+    rating: 4.5,
+  },
+  {
+    name: "Sophie Chen",
+    text: "Amazing service and beautiful atmosphere. The experience was comfortable and memorable. Highly recommended!",
+    rating: 5,
+  },
+  {
+    name: "John Carter",
+    text: "Clean rooms, friendly staff, and excellent location. Will definitely come back again.",
+    rating: 4,
+  },
+];
+
+
+export const breadCrumbs = [
+  {
+    name: "Home",
+    url: "/",
+  },
+  {
+    name: "Rooms",
+    url: "/rooms",
+  },
+  {
+    name: "Blog",
+    url: "/blog",
+  },
+  {
+    name: "Contact",
+    url: "/contact",
+  },
+  {
+    name: "About",
+    url: "/about",
+  },
+];
