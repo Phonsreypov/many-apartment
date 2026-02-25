@@ -1,9 +1,12 @@
 
 import BlogSection from '@/components/BlogSection'
 import BreadcrumbSection from '@/components/BreadcrumbSection'
-import React from 'react'
+import { blogListDetails } from '@/configs/Data'
+import Link from 'next/link'
+
 
 function page() {
+  
   return (
     <div>
        <BreadcrumbSection
@@ -12,6 +15,7 @@ function page() {
           title="Our Blog"
           paragraph="Discover the Latest News and Insights"
         />
+        
       <BlogSection/>    
     </div>
   )
