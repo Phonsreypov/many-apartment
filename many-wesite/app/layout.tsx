@@ -28,8 +28,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-
-
       <body
         suppressHydrationWarning
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
@@ -38,13 +36,6 @@ export default function RootLayout({
         {children}
         <FooterSection />
       </body>
-      <Script src="js/jquery-3.3.1.min.js"></Script>
-      <Script src="js/jquery.magnific-popup.min.js"></Script>
-      <Script src="js/jquery.nice-select.min.js"></Script>
-      <Script src="js/jquery-ui.min.js"></Script>
-      <Script src="js/jquery.slicknav.js"></Script>
-      <Script src="js/owl.carousel.min.js"></Script>
-      <Script src="js/main.js"></Script>
     </html>
 
 

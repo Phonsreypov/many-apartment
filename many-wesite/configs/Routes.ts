@@ -15,9 +15,9 @@ export const MenuTop: Route[] = [
   {
     label: "Rooms",
     url: "/rooms",
-    children: roomList.map((room) => ({
-      label: room.title,
-      url: `/rooms/${room.slug}`,
+    children: roomList.map((roomDetail) => ({
+      label: roomDetail.title,
+      url: `/rooms/${roomDetail.slug}`,
     })),
   },
   {
