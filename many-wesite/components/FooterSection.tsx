@@ -1,113 +1,132 @@
 "use client";
 
+import Link from "next/link";
+import { footerData } from "@/configs/Data";
+import { Facebook, Instagram, Twitter, Youtube } from "lucide-react";
+import Image from "next/image";
 
 export default function FooterSection() {
     return (
         <footer className="relative bg-[#061E29] text-white overflow-hidden">
-            {/* Decorative glow background */}
+            {/* Luxury Glow Background */}
             <div className="absolute inset-0 opacity-20 pointer-events-none">
-                <div className="absolute -top-20 -left-20 w-96 h-96 bg-[#5F9598] rounded-full blur-[140px]" />
-                <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#1D546D] rounded-full blur-[140px]" />
+                <div className="absolute -top-32 -left-32 w-[32rem] h-[32rem] bg-[#5F9598] rounded-full blur-[180px]" />
+                <div className="absolute bottom-0 right-0 w-[32rem] h-[32rem] bg-[#1D546D] rounded-full blur-[180px]" />
             </div>
 
-            <div className="relative max-w-7xl mx-auto px-6 py-24">
-                {/* TOP GRID */}
-                <div className="grid gap-14 md:grid-cols-2 lg:grid-cols-4">
-                    {/* Brand */}
+            <div className="relative max-w-7xl mx-auto px-6 py-32">
+                {/* MAIN GRID */}
+                <div className="grid gap-20 md:grid-cols-2 lg:grid-cols-4">
+                    {/* BRAND */}
                     <div>
-                        <h2 className="text-2xl font-bold mb-6">Many Apartment</h2>
+                        <h2 className="mb-6">
+                            <Image
+                                src={footerData.brand.image}
+                                alt="Footer Logo"
+                                width={90}
+                                height={50}
+                                className="object-contain"
+                            />
+                        </h2>
 
-                        <p className="text-gray-300 text-sm leading-relaxed">
-                            Experience luxury living with modern comfort. Designed for
-                            travelers who value elegance, relaxation, and premium service.
+                        <p className="text-gray-300 leading-relaxed text-sm max-w-sm">
+                            {footerData.brand.description}
                         </p>
 
-                        {/* Social */}
-                        <div className="flex gap-4 mt-8">
-                            {["F", "T", "I", "Y"].map((s, i) => (
+                        {/* SOCIAL ICONS */}
+                        <div className="flex gap-4 mt-10">
+                            {[Facebook, Twitter, Instagram, Youtube].map((Icon, i) => (
                                 <div
                                     key={i}
-                                    className="w-11 h-11 flex items-center justify-center rounded-full bg-white/10 backdrop-blur hover:bg-[#5F9598] transition cursor-pointer"
+                                    className="group relative w-11 h-11 flex items-center justify-center rounded-full bg-white/5 border border-white/10 hover:border-[#C59D5F] transition duration-300 cursor-pointer"
                                 >
-                                    {s}
+                                    <Icon
+                                        size={18}
+                                        className="group-hover:text-[#C59D5F] transition"
+                                    />
                                 </div>
                             ))}
                         </div>
                     </div>
 
-                    {/* Navigation */}
+                    {/* EXPLORE */}
                     <div>
-                        <h4 className="font-semibold mb-6 text-lg">Explore</h4>
+                        <h4 className="text-lg font-semibold mb-8">
+                            {footerData.explore.title}
+                        </h4>
 
-                        <ul className="space-y-3 text-gray-300">
-                            <li className="hover:text-[#5F9598] cursor-pointer transition">
-                                Rooms
-                            </li>
-                            <li className="hover:text-[#5F9598] cursor-pointer transition">
-                                Gallery
-                            </li>
-                            <li className="hover:text-[#5F9598] cursor-pointer transition">
-                                Events
-                            </li>
-                            <li className="hover:text-[#5F9598] cursor-pointer transition">
-                                Blog
-                            </li>
+                        <ul className="space-y-4 text-gray-300">
+                            {footerData.explore.links.map((link) => (
+                                <li key={link.label}>
+                                    <Link
+                                        href={link.url}
+                                        className="hover:text-[#C59D5F] transition flex items-center gap-2 group"
+                                    >
+                                        <span className="w-0 h-[2px] bg-[#C59D5F] group-hover:w-4 transition-all duration-300"></span>
+                                        {link.label}
+                                    </Link>
+                                </li>
+                            ))}
                         </ul>
                     </div>
 
-                    {/* Contact */}
+                    {/* CONTACT */}
                     <div>
-                        <h4 className="font-semibold mb-6 text-lg">Contact</h4>
+                        <h4 className="text-lg font-semibold mb-8">
+                            {footerData.contact.title}
+                        </h4>
 
                         <ul className="space-y-4 text-gray-300 text-sm">
-                            <li className="flex items-center gap-3">+855 12 345 678</li>
-
-                            <li className="flex items-center gap-3">
-                                info@manyapartment.com
+                            <li className="hover:text-[#C59D5F] transition">
+                                {footerData.contact.phone}
                             </li>
-
-                            <li className="flex items-center gap-3">Phnom Penh, Cambodia</li>
+                            <li className="hover:text-[#C59D5F] transition">
+                                {footerData.contact.email}
+                            </li>
+                            <li>{footerData.contact.location}</li>
                         </ul>
                     </div>
 
-                    {/* Newsletter */}
+                    {/* NEWSLETTER */}
                     <div>
-                        <h4 className="font-semibold mb-6 text-lg">Newsletter</h4>
+                        <h4 className="text-lg font-semibold mb-8">
+                            {footerData.newsletter.title}
+                        </h4>
 
-                        <p className="text-gray-300 text-sm mb-5">
-                            Subscribe for updates & exclusive offers.
+                        <p className="text-gray-300 text-sm mb-6">
+                            {footerData.newsletter.description}
                         </p>
 
-                        <div className="flex bg-white rounded-full overflow-hidden shadow-lg">
+                        <div className="flex items-center bg-white/5 backdrop-blur rounded-full overflow-hidden border border-white/10 focus-within:border-[#C59D5F] transition">
                             <input
                                 type="email"
                                 placeholder="Enter your email"
-                                className="flex-1 px-4 py-3 text-black outline-none"
+                                className="flex-1 px-5 py-3 bg-transparent text-white placeholder-gray-400 outline-none text-sm"
                             />
-
-                            <button className="bg-[#1D546D] px-3 hover:bg-[#5F9598] transition">
+                            <button className="bg-[#C59D5F] px-3 py-3 text-sm font-medium hover:bg-[#b8914d] transition">
                                 Send
                             </button>
                         </div>
                     </div>
                 </div>
 
-                {/* Bottom Bar */}
-                <div className="border-t border-white/10 mt-16 pt-6 flex flex-col md:flex-row justify-between items-center text-sm text-gray-400 gap-4">
+                {/* BOTTOM BAR */}
+                <div className="border-t border-white/10 mt-24 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-400 gap-6">
                     <p>
-                        © {new Date().getFullYear()} Many Apartment. All rights reserved.
+                        © {new Date().getFullYear()} Many Apartment All rights
+                        reserved.
                     </p>
 
-                    <div className="flex gap-6">
-                        <span className="hover:text-[#5F9598] cursor-pointer transition">
-                            Privacy
-                        </span>
-                        <span className="hover:text-[#5F9598] cursor-pointer transition">
-                            Terms
-                        </span>
-                        <span className="hover:text-[#5F9598] cursor-pointer transition">
-                            Policy
-                        </span>
+                    <div className="flex gap-8">
+                        {footerData.bottomLinks.map((link) => (
+                            <Link
+                                key={link.label}
+                                href={link.url}
+                                className="hover:text-[#C59D5F] transition"
+                            >
+                                {link.label}
+                            </Link>
+                        ))}
                     </div>
                 </div>
             </div>
